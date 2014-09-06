@@ -1,0 +1,8 @@
+subprojects {
+//    apply plugin: 'java'
+//    apply plugin: 'groovy'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
