@@ -14,8 +14,8 @@ By default gradle does not create a jar *artifact* from the test build output of
 
 This plugin adds a *testArchives* configuration (based on *testCompile*) and a *jarTest* task to
 create a jar from the test *source set* (with the classifier `test` added to name of the jar). We
-can then depend in **B** on the *testArchives* configuration of *A* (which will also include the
-transitive dependencies of *A*).
+can then depend in **B** on the *testArchives* configuration of **A** (which will also include the
+transitive dependencies of **A**).
 
 In **A** we would add the plugin to `build.gradle`:
 
