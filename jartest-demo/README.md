@@ -12,3 +12,8 @@ project (see `build.gradle` of **SubA**). This will automatically include its tr
 dependencies (**SubC**).
 
 See the `build.gradle` files of the sub projects.
+
+Tested with
+
+* Gradle 2.3
+* Gradle 2.2
