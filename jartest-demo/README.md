@@ -15,6 +15,7 @@ See the `build.gradle` files of the sub projects.
 
 Tested with
 
+* Gradle 2.6
 * Gradle 2.5
 * Gradle 2.4
 * Gradle 2.3
