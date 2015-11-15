@@ -1,0 +1,10 @@
+// this project does only have a *test* dependency on project SubB.  *test* dependency means
+// that this project needs *test* code project SubB that is NOT contained in the jar build
+// artifact of SubB because it is test code.
+//
+// SubB does build a second jar with its test code using the *jarTest* plugin. To add it as
+// a dependency we request the 'testArchives' configuration of SubB.
+
+dependencies {
+    testCompile project (path: ':SubB', configuration: 'testArchives')
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'jartest-demo'
+
+include 'SubA'
+include 'SubB'
+include 'SubC'

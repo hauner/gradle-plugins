@@ -1,0 +1,8 @@
+// applying the 'jarTest' plugin will create a second jar with the test code of the
+// project.
+
+apply plugin: 'com.github.hauner.jarTest'
+
+dependencies {
+    compile project(':SubC')
+}

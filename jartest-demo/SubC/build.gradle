@@ -1,0 +1,2 @@
+// this project contains code that is ONLY used by 'SubB' and NOT by SubA. SubA has
+// a dependency on SubB and will get SubC as a transitive dependency of SubB.
