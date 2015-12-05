@@ -10,6 +10,9 @@ buildscript {
     }
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}
 
 apply plugin: 'com.gradle.plugin-publish'
 apply plugin: 'groovy'
