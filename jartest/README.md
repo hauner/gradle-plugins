@@ -27,12 +27,4 @@ In **B** we reference the *testArchives* configuration like this:
     }
 
 
-Currently gradle will not download the plugin automatically. To make the plugin available we need to
-add the plugin jar manually. After building the plugin you can place the jar into a `libs` folder in
-your gradle project and make it available by adding a `buildscript` dependency:
-
-    buildscript {
-        dependencies {
-            classpath files("${project.rootDir}/libs/jartest-1.0.jar")
-        }
-    }
+The plugin is available from [plugins.gradle.org](https://plugins.gradle.org/plugin/com.github.hauner.jarTest/1.0)
