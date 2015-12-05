@@ -3,10 +3,15 @@ task wrapper(type: Wrapper) {
 }
 
 buildscript {
-    dependencies {
-        classpath gradleApi()
-        classpath files("${project.rootDir}/libs/jartest-1.0.jar")
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
     }
+  }
+  dependencies {
+      classpath "gradle.plugin.gradle-plugins:jartest:1.0.1"
+//        classpath files("${project.rootDir}/libs/jartest-1.0.jar")
+  }
 }
 
 subprojects {
