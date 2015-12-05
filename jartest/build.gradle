@@ -39,7 +39,7 @@ dependencies {
 pluginBundle {
     website = 'https://github.com/hauner/gradle-plugins'
     vcsUrl = 'https://github.com/hauner/gradle-plugins/tree/master/jartest'
-    version = '1.0'
+    version = '1.0.1'
 
     plugins {
         jarTestPlugin {
@@ -47,7 +47,7 @@ pluginBundle {
             displayName = 'Gradle JarTest plugin'
             description = 'create a jar from the test source set. See https://github.com/hauner/gradle-plugins/tree/master/jartest for usage information.'
             tags = ['test', 'jar', 'dependency']
-            version = '1.0'
+            version = '1.0.1'
         }
     }
 }
