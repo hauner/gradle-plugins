@@ -36,6 +36,7 @@ dependencies {
 pluginBundle {
     website = 'https://github.com/hauner/gradle-plugins'
     vcsUrl = 'https://github.com/hauner/gradle-plugins/tree/master/jartest'
+    version = '1.0'
 
     plugins {
         jarTestPlugin {
