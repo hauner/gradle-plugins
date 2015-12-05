@@ -1,6 +1,19 @@
-version = '1.0'
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
 
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.2"
+    }
+}
+
+
+apply plugin: 'com.gradle.plugin-publish'
 apply plugin: 'groovy'
+
 
 repositories {
     mavenCentral()
@@ -16,5 +29,21 @@ dependencies {
 
     testCompile ("org.spockframework:spock-core:1.0-groovy-2.3") {
         exclude module: "groovy-all"
+    }
+}
+
+
+pluginBundle {
+    website = 'https://github.com/hauner/gradle-plugins'
+    vcsUrl = 'https://github.com/hauner/gradle-plugins/tree/master/jartest'
+
+    plugins {
+        jarTestPlugin {
+            id = 'com.github.hauner.jarTest'
+            displayName = 'Gradle JarTest plugin'
+            description = 'create a jar from the test source set. See https://github.com/hauner/gradle-plugins/tree/master/jartest for usage information.'
+            tags = ['test', 'jar', 'dependency']
+            version = '1.0'
+        }
     }
 }
