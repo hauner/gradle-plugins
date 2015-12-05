@@ -27,7 +27,7 @@ class JarTestPlugin implements Plugin<Project> {
             testArchives.extendsFrom (testCompile)
         }
 
-        project.task ('jarTest', type:Jar, dependsOn: project.testClasses, description: 'create jar from test source set') {
+        project.task ('jarTest', type:Jar, dependsOn: project.testClasses, description: 'create a jar from the test source set') {
             from project.sourceSets.test.output
             classifier = 'test'
         }
