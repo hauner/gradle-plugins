@@ -27,4 +27,4 @@ In **B** we reference the *testArchives* configuration like this:
     }
 
 
-The plugin is available from [plugins.gradle.org](https://plugins.gradle.org/plugin/com.github.hauner.jarTest/1.0)
+The plugin is available from [plugins.gradle.org](https://plugins.gradle.org/plugin/com.github.hauner.jarTest)
