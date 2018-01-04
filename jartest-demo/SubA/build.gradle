@@ -6,5 +6,6 @@
 // a dependency we request the 'testArchives' configuration of SubB.
 
 dependencies {
+    compileOnly project(':SubB')
     testCompile project (path: ':SubB', configuration: 'testArchives')
 }
