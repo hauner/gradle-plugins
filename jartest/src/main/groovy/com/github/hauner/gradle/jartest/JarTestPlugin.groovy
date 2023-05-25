@@ -29,7 +29,7 @@ class JarTestPlugin implements Plugin<Project> {
 
         project.task ('jarTest', type:Jar, dependsOn: project.testClasses, description: 'create a jar from the test source set') {
             from project.sourceSets.test.output
-            classifier = 'test'
+            archiveClassifier = 'test'
         }
 
         project.artifacts {
