@@ -1,21 +1,10 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-
-    dependencies {
-        classpath "com.gradle.publish:plugin-publish-plugin:1.1.0"
-    }
+plugins {
+    id 'groovy'
+    id("com.gradle.plugin-publish") version "1.2.0"
 }
 
-apply plugin: 'com.gradle.plugin-publish'
-apply plugin: 'groovy'
-
-
-targetCompatibility = JavaVersion.VERSION_1_6
-
+group = 'com.github.hauner'
+version = '1.1.0'
 
 repositories {
     mavenCentral()
@@ -29,19 +18,19 @@ dependencies {
     implementation gradleApi()
     implementation localGroovy()
 
-    testImplementation ("org.spockframework:spock-core:1.0-groovy-2.3") {
-        exclude module: "groovy-all"
+    testImplementation platform("org.spockframework:spock-bom:2.3-groovy-3.0")
+    testImplementation ('org.spockframework:spock-core') {
+        exclude module: 'groovy'
     }
 }
 
-processResources {
-    duplicatesStrategy = 'EXCLUDE'
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
 }
 
 gradlePlugin {
     website = 'https://github.com/hauner/gradle-plugins'
     vcsUrl = 'https://github.com/hauner/gradle-plugins/tree/master/jartest'
-    version = '1.0.2'
 
     plugins {
         jarTestPlugin {
@@ -50,7 +39,6 @@ gradlePlugin {
             description = 'create a jar from the test source set. See https://github.com/hauner/gradle-plugins/tree/master/jartest for usage information.'
             tags.set(['test', 'jar', 'dependency'])
             implementationClass = 'com.github.hauner.gradle.jartest.JarTestPlugin'
-            version = '1.0.2'
         }
     }
 }

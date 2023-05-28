@@ -1,3 +1,4 @@
 rootProject.name = 'gradle-plugins'
 
-include 'jartest', 'jartest-demo'
+includeBuild 'jartest'
+includeBuild 'jartest-demo'

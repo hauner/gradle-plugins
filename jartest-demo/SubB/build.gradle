@@ -1,8 +1,13 @@
 // applying the 'jarTest' plugin will create a second jar with the test code of the
 // project.
+plugins {
+    id 'groovy'
+    id 'com.github.hauner.jarTest' version '1.1.0'
+}
 
-apply plugin: 'com.github.hauner.jarTest'
+group = 'com.github.hauner.jartest.demo'
 
 dependencies {
-    compile project(':SubC')
+    implementation localGroovy()
+    testImplementation project(':SubC')
 }

@@ -16,8 +16,9 @@ transitive dependencies of **A**).
 
 In **A** we would add the plugin to `build.gradle`:
 
-    apply plugin: 'com.github.hauner.jarTest'
-
+    plugins {
+      id("com.github.hauner.jarTest") version "1.1.0"
+    }
 
 In **B** we reference the *testArchives* configuration like this:
 

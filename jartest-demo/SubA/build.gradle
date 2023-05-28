@@ -5,6 +5,27 @@
 // SubB does build a second jar with its test code using the *jarTest* plugin. To add it as
 // a dependency we request the 'testArchives' configuration of SubB.
 
+plugins {
+    id 'groovy'
+}
+
+group = 'com.github.hauner.jartest.demo'
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    testCompile project (path: ':SubB', configuration: 'testArchives')
+    implementation localGroovy()
+
+    testImplementation project (path: ':SubB', configuration: 'testArchives')
+
+    testImplementation platform("org.spockframework:spock-bom:2.3-groovy-3.0")
+    testImplementation ('org.spockframework:spock-core') {
+        exclude module: "groovy"
+    }
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
 }

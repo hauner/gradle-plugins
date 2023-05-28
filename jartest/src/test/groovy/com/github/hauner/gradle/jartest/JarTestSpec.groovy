@@ -18,7 +18,7 @@ class JarTestSpec extends Specification {
     def "plugin adds 'testArchives' configuration to project" () {
         expect:
         project.configurations.testArchives
-        project.configurations.testArchives.extendsFrom.find { it.name == 'testCompile' }
+        project.configurations.testArchives.extendsFrom.find { it.name == 'testImplementation' }
     }
 
     def "plugin adds 'jarTest' task dependency on 'testArchive' configuration" () {
@@ -37,6 +37,6 @@ class JarTestSpec extends Specification {
         jarTest
         jarTest.dependsOn.find { it instanceof Task }.name == 'testClasses'
         ! jarTest.description.empty
-        jarTest.classifier == 'test'
+        jarTest.archiveClassifier.get() == 'test'
     }
 }
